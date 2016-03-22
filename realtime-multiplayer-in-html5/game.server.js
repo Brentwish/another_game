@@ -1,8 +1,8 @@
 /*  Copyright 2012-2016 Sven "underscorediscovery" Bergström
-    
+
     written by : http://underscorediscovery.ca
     written for : http://buildnewgames.com/real-time-multiplayer/
-    
+
     MIT Licensed.
 */
 
@@ -55,7 +55,7 @@
             game_server._onMessage(client, message);
         }
     };
-    
+
     game_server._onMessage = function(client,message) {
 
             //Cut the message up into sub components
@@ -127,7 +127,7 @@
         console.log('server host at  ' + thegame.gamecore.local_time);
         player.game = thegame;
         player.hosting = true;
-        
+
         this.log('player ' + player.userid + ' created a game with id ' + player.game.id);
 
             //return it
@@ -158,7 +158,7 @@
                             //now look for/create a new game.
                         this.findGame(thegame.player_client);
                     }
-                    
+
                 } else {
                         //the other player left, we were hosting
                     if(thegame.player_host) {
@@ -196,7 +196,7 @@
             //clients will reset their positions in this case.
         game.player_client.send('s.r.'+ String(game.gamecore.local_time).replace('.','-'));
         game.player_host.send('s.r.'+ String(game.gamecore.local_time).replace('.','-'));
- 
+
             //set this flag, so that the update loop can run it.
         game.active = true;
 
@@ -209,7 +209,7 @@
             //so there are games active,
             //lets see if one needs another player
         if(this.game_count) {
-                
+
             var joined_a_game = false;
 
                 //Check the list of games for an open game
